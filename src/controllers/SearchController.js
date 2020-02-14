@@ -17,7 +17,7 @@ console.log('techs ', techs)
               type: 'Point',
               coordinates: [longitude, latitude]
             },
-            $maxDistance: 10000,
+            $maxDistance: 40000,
           },
         },
       })
