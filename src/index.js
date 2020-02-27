@@ -1,24 +1,16 @@
 const express = require('express');
-const mongoose = require('mongoose')
 const cors = require('cors')
 const routes = require('./routes')
 
 const app = express();
 
-mongoose.connect('mongodb+srv://omnistack2888:omnistack2888@cluster0-jvpkk.mongodb.net/week10?retryWrites=true&w=majority',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,  
-})
-
-app.use(cors({origin:'http://localhost:3000'}))
-//app.use(cors())
-
-//('mongodb+srv://omnistack2888:omnistack2888@cluster0-jvpkk.mongodb.net/test')
-//mongodb+srv://omnistack2888:<omnistack2888>@cluster0-jvpkk.mongodb.net/test?retryWrites=true&w=majority
+//app.use(cors({origin:'http://localhost:3000'}))
 
 app.use(express.json())
 app.use(routes)
 
+
+console.log('qrc_backend Ouvindo na porta 3333')
 app.listen(3333)
 //para rodar o dev e o front juntos (3333 e 3000)
 //yarn add cors
